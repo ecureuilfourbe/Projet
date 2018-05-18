@@ -12,7 +12,14 @@ class Organizations extends ControllerBase{
 
 	public function display($idOrga){
 		$orga=DOA::getOne("models\\Organization",$idOrga,true,true);
-		$this->loadView('Organizations/display.html',["idorgas"=>$idOrga]);
+		$this->loadView('Organizations/display.html',["idorgas"=>$idOrga,"user"=>$truc]);
+
+	}
+
+
+	protected function user($truc){
+		$title="Tous les users";
+		$this->loadView('Organizations/user.html');
 
 	}
 
